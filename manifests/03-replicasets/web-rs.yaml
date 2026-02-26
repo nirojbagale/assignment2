@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web-rs
+  namespace: web-ns
+  labels:
+    app: web
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: web
+        tier: frontend
+    spec:
+      containers:
+        - name: web
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
