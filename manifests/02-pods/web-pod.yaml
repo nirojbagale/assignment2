@@ -9,9 +9,22 @@ metadata:
 spec:
   containers:
     - name: web
-      image: nginx:latest
+      image: 677868816391.dkr.ecr.us-east-1.amazonaws.com/clo835-webapp:latest
       ports:
-        - containerPort: 80
+        - containerPort: 8080
+      env:
+        - name: DBHOST
+          value: "mysql-svc.mysql-ns.svc.cluster.local"
+        - name: DBUSER
+          value: "root"
+        - name: DBPWD
+          value: "pw"
+        - name: DATABASE
+          value: "employees"
+        - name: DBPORT
+          value: "3306"
+        - name: APP_COLOR
+          value: "lime"
       resources:
         requests:
           memory: "64Mi"

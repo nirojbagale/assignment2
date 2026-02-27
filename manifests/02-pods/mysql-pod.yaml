@@ -9,18 +9,14 @@ metadata:
 spec:
   containers:
     - name: mysql
-      image: mysql:8.0
+      image: 677868816391.dkr.ecr.us-east-1.amazonaws.com/clo835-mysql:latest
       ports:
         - containerPort: 3306
       env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "rootpassword"
+          value: "pw"
         - name: MYSQL_DATABASE
-          value: "appdb"
-        - name: MYSQL_USER
-          value: "appuser"
-        - name: MYSQL_PASSWORD
-          value: "apppassword"
+          value: "employees"
       resources:
         requests:
           memory: "256Mi"
