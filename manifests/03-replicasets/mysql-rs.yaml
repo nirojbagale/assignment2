@@ -18,6 +18,8 @@ spec:
         app: mysql
         tier: database
     spec:
+      imagePullSecrets:
+        - name: ecr-secret
       containers:
         - name: mysql
           image: 677868816391.dkr.ecr.us-east-1.amazonaws.com/clo835-mysql:latest

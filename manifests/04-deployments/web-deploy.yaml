@@ -23,6 +23,8 @@ spec:
         app: employees
         tier: frontend
     spec:
+      imagePullSecrets:
+        - name: ecr-secret
       containers:
         - name: web
           image: 677868816391.dkr.ecr.us-east-1.amazonaws.com/clo835-webapp:v1
