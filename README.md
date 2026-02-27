@@ -27,4 +27,4 @@ kubectl apply -f manifests/
 
 ## Author
 
-Dilip Dawadi
+Niroj Bagale
