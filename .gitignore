@@ -1,0 +1,5 @@
+.aws/
+*.pem
+*.key
+.DS_Store
+.vscode/
